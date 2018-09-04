@@ -259,7 +259,13 @@ public class SwiftWebVC: UIViewController {
                     activityItems.append(url)
                 }
                 let activityController: UIActivityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: activities as? [UIActivity])
-                
+                activityController.excludedActivityTypes = [
+                    UIActivityType.print,
+                    UIActivityType.copyToPasteboard,
+                    UIActivityType.assignToContact,
+                    UIActivityType.saveToCameraRoll,
+                    UIActivityType.addToReadingList
+                ]
                 if floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1 && UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
                     let ctrl: UIPopoverPresentationController = activityController.popoverPresentationController!
                     ctrl.sourceView = view
