@@ -79,7 +79,7 @@ public class SwiftWebVC: UIViewController {
     
     var sharingEnabled = true
     
-    var shareItem: SwiftWebVcShareItem?
+    var shareItem: SwiftWebVCShareItem?
     
     ////////////////////////////////////////////////
     
@@ -90,7 +90,7 @@ public class SwiftWebVC: UIViewController {
         webView.navigationDelegate = nil;
     }
     
-    public convenience init(urlString: String, shareItem: SwiftWebVcShareItem?, sharingEnabled: Bool = true) {
+    public convenience init(urlString: String, shareItem: SwiftWebVCShareItem?, sharingEnabled: Bool = true) {
         var urlString = urlString
         if !urlString.hasPrefix("https://") && !urlString.hasPrefix("http://") {
             urlString = "https://"+urlString
@@ -98,11 +98,11 @@ public class SwiftWebVC: UIViewController {
         self.init(pageURL: URL(string: urlString)!, shareItem: shareItem, sharingEnabled: sharingEnabled)
     }
     
-    public convenience init(pageURL: URL, shareItem: SwiftWebVcShareItem?, sharingEnabled: Bool = true) {
+    public convenience init(pageURL: URL, shareItem: SwiftWebVCShareItem?, sharingEnabled: Bool = true) {
         self.init(aRequest: URLRequest(url: pageURL), shareItem: shareItem, sharingEnabled: sharingEnabled)
     }
     
-    public convenience init(aRequest: URLRequest, shareItem: SwiftWebVcShareItem?, sharingEnabled: Bool = true) {
+    public convenience init(aRequest: URLRequest, shareItem: SwiftWebVCShareItem?, sharingEnabled: Bool = true) {
         self.init()
         self.sharingEnabled = sharingEnabled
         self.request = aRequest
