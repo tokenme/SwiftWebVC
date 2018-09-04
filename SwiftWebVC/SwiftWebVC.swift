@@ -251,8 +251,11 @@ public class SwiftWebVC: UIViewController {
                     if let image = shareItem.image {
                         activityItems.append(image)
                     }
-                    activityItems.append(shareItem.link)
-                } else {
+                    if let link = shareItem.link {
+                        activityItems.append(link)
+                    }
+                }
+                if activityItems.count == 0 {
                     activityItems.append(url)
                 }
                 let activityController: UIActivityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: activities as? [UIActivity])

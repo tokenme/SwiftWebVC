@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-public struct SwiftWebVcShareItem {
+public struct SwiftWebVCShareItem {
     let title: String?
     let image: UIImage?
-    let link: URL!
+    let link: URL?
     
-    public init(title: String?, image: UIImage?, link: URL) {
+    public init(title: String?, image: UIImage?, link: URL?) {
         self.title = title
         self.image = image
         self.link = link
