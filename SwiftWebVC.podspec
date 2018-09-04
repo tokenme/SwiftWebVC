@@ -31,11 +31,11 @@ Pod::Spec.new do |s|
   * 3 different themes to choose from when presented modally
                        DESC
 
-  s.homepage         = 'https://github.com/meismyles/SwiftWebVC'
+  s.homepage         = 'https://github.com/tokenme/SwiftWebVC'
   s.screenshots      = 'https://cloud.githubusercontent.com/assets/6603912/8509772/e1a1f2b6-22b0-11e5-878d-273b5b17b95a.png', 'https://cloud.githubusercontent.com/assets/6603912/8509773/e1a33ab8-22b0-11e5-93e4-c671934f55e5.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Myles Ringle' => 'meismyles@gmail.com' }
-  s.source           = { :git => 'https://github.com/meismyles/SwiftWebVC.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/tokenme/SwiftWebVC.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

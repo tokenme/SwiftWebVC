@@ -79,6 +79,8 @@ public class SwiftWebVC: UIViewController {
     
     var sharingEnabled = true
     
+    var shareItem: SwiftWebVcShareItem?
+    
     ////////////////////////////////////////////////
     
     deinit {
@@ -88,22 +90,23 @@ public class SwiftWebVC: UIViewController {
         webView.navigationDelegate = nil;
     }
     
-    public convenience init(urlString: String, sharingEnabled: Bool = true) {
+    public convenience init(urlString: String, shareItem: SwiftWebVcShareItem?, sharingEnabled: Bool = true) {
         var urlString = urlString
         if !urlString.hasPrefix("https://") && !urlString.hasPrefix("http://") {
             urlString = "https://"+urlString
         }
-        self.init(pageURL: URL(string: urlString)!, sharingEnabled: sharingEnabled)
+        self.init(pageURL: URL(string: urlString)!, shareItem: shareItem, sharingEnabled: sharingEnabled)
     }
     
-    public convenience init(pageURL: URL, sharingEnabled: Bool = true) {
-        self.init(aRequest: URLRequest(url: pageURL), sharingEnabled: sharingEnabled)
+    public convenience init(pageURL: URL, shareItem: SwiftWebVcShareItem?, sharingEnabled: Bool = true) {
+        self.init(aRequest: URLRequest(url: pageURL), shareItem: shareItem, sharingEnabled: sharingEnabled)
     }
     
-    public convenience init(aRequest: URLRequest, sharingEnabled: Bool = true) {
+    public convenience init(aRequest: URLRequest, shareItem: SwiftWebVcShareItem?, sharingEnabled: Bool = true) {
         self.init()
         self.sharingEnabled = sharingEnabled
         self.request = aRequest
+        self.shareItem = shareItem
     }
     
     func loadRequest(_ request: URLRequest) {
@@ -129,11 +132,7 @@ public class SwiftWebVC: UIViewController {
         navBarTitle = UILabel()
         navBarTitle.backgroundColor = UIColor.clear
         if presentingViewController == nil {
-            if let titleAttributes = navigationController!.navigationBar.titleTextAttributes {
-                navBarTitle.textColor = titleAttributes[.foregroundColor] as? UIColor
-            }
-        }
-        else {
+        }else {
             navBarTitle.textColor = self.titleColor
         }
         navBarTitle.shadowOffset = CGSize(width: 0, height: 1);
@@ -244,7 +243,19 @@ public class SwiftWebVC: UIViewController {
                 dc.presentOptionsMenu(from: view.bounds, in: view, animated: true)
             }
             else {
-                let activityController: UIActivityViewController = UIActivityViewController(activityItems: [url], applicationActivities: activities as? [UIActivity])
+                var activityItems: [Any] = []
+                if let shareItem = self.shareItem {
+                    if let title = shareItem.title {
+                        activityItems.append(title)
+                    }
+                    if let image = shareItem.image {
+                        activityItems.append(image)
+                    }
+                    activityItems.append(shareItem.link)
+                } else {
+                    activityItems.append(url)
+                }
+                let activityController: UIActivityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: activities as? [UIActivity])
                 
                 if floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1 && UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
                     let ctrl: UIPopoverPresentationController = activityController.popoverPresentationController!

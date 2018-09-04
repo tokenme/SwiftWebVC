@@ -19,28 +19,28 @@ public class SwiftModalWebVC: UINavigationController {
     
     weak var webViewDelegate: UIWebViewDelegate? = nil
     
-    public convenience init(urlString: String, sharingEnabled: Bool = true) {
+    public convenience init(urlString: String, shareItem: SwiftWebVcShareItem?, sharingEnabled: Bool = true) {
         var urlString = urlString
         if !urlString.hasPrefix("https://") && !urlString.hasPrefix("http://") {
             urlString = "https://"+urlString
         }
-        self.init(pageURL: URL(string: urlString)!, sharingEnabled: sharingEnabled)
+        self.init(pageURL: URL(string: urlString)!, shareItem: shareItem, sharingEnabled: sharingEnabled)
     }
     
-    public convenience init(urlString: String, theme: SwiftModalWebVCTheme, dismissButtonStyle: SwiftModalWebVCDismissButtonStyle, sharingEnabled: Bool = true) {
-        self.init(pageURL: URL(string: urlString)!, theme: theme, dismissButtonStyle: dismissButtonStyle, sharingEnabled: sharingEnabled)
+    public convenience init(urlString: String, shareItem: SwiftWebVcShareItem?, theme: SwiftModalWebVCTheme, dismissButtonStyle: SwiftModalWebVCDismissButtonStyle, sharingEnabled: Bool = true) {
+        self.init(pageURL: URL(string: urlString)!, shareItem: shareItem, theme: theme, dismissButtonStyle: dismissButtonStyle, sharingEnabled: sharingEnabled)
     }
     
-    public convenience init(pageURL: URL, sharingEnabled: Bool = true) {
-        self.init(request: URLRequest(url: pageURL), sharingEnabled: sharingEnabled)
+    public convenience init(pageURL: URL, shareItem: SwiftWebVcShareItem?, sharingEnabled: Bool = true) {
+        self.init(request: URLRequest(url: pageURL), shareItem: shareItem, sharingEnabled: sharingEnabled)
     }
     
-    public convenience init(pageURL: URL, theme: SwiftModalWebVCTheme, dismissButtonStyle: SwiftModalWebVCDismissButtonStyle, sharingEnabled: Bool = true) {
-        self.init(request: URLRequest(url: pageURL), theme: theme, dismissButtonStyle: dismissButtonStyle, sharingEnabled: sharingEnabled)
+    public convenience init(pageURL: URL, shareItem: SwiftWebVcShareItem?, theme: SwiftModalWebVCTheme, dismissButtonStyle: SwiftModalWebVCDismissButtonStyle, sharingEnabled: Bool = true) {
+        self.init(request: URLRequest(url: pageURL), shareItem: shareItem, theme: theme, dismissButtonStyle: dismissButtonStyle, sharingEnabled: sharingEnabled)
     }
     
-    public init(request: URLRequest, theme: SwiftModalWebVCTheme = .lightBlue, dismissButtonStyle: SwiftModalWebVCDismissButtonStyle = .arrow, sharingEnabled: Bool = true) {
-        let webViewController = SwiftWebVC(aRequest: request)
+    public init(request: URLRequest, shareItem: SwiftWebVcShareItem?, theme: SwiftModalWebVCTheme = .lightBlue, dismissButtonStyle: SwiftModalWebVCDismissButtonStyle = .arrow, sharingEnabled: Bool = true) {
+        let webViewController = SwiftWebVC(aRequest: request, shareItem: shareItem)
         webViewController.sharingEnabled = sharingEnabled
         webViewController.storedStatusColor = UINavigationBar.appearance().barStyle
         

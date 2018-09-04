@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D151EC6213EAC19007C87DD /* SwiftWebVCShareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D151EC5213EAC19007C87DD /* SwiftWebVCShareItem.swift */; };
 		B91D24E81E5CFE6E000F9BF1 /* SwiftWebVCFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = B91D24E61E5CFE6E000F9BF1 /* SwiftWebVCFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9C1B7FB1E5E4518001B0A2D /* SwiftModalWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1B7F21E5E442F001B0A2D /* SwiftModalWebVC.swift */; };
 		B9C1B7FC1E5E4518001B0A2D /* SwiftWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1B7F31E5E442F001B0A2D /* SwiftWebVC.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D151EC5213EAC19007C87DD /* SwiftWebVCShareItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftWebVCShareItem.swift; sourceTree = "<group>"; };
 		B91D24E31E5CFE6E000F9BF1 /* SwiftWebVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftWebVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B91D24E61E5CFE6E000F9BF1 /* SwiftWebVCFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftWebVCFramework.h; sourceTree = "<group>"; };
 		B91D24E71E5CFE6E000F9BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				B9C1B7F21E5E442F001B0A2D /* SwiftModalWebVC.swift */,
 				B9C1B7F31E5E442F001B0A2D /* SwiftWebVC.swift */,
 				B9C1B7F41E5E442F001B0A2D /* SwiftWebVCActivity.swift */,
+				1D151EC5213EAC19007C87DD /* SwiftWebVCShareItem.swift */,
 				B9C1B7F51E5E442F001B0A2D /* SwiftWebVCActivityChrome.swift */,
 				B9C1B7F61E5E442F001B0A2D /* SwiftWebVCActivitySafari.swift */,
 			);
@@ -146,10 +149,11 @@
 		B91D24DA1E5CFE6E000F9BF1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0940;
 				TargetAttributes = {
 					B91D24E21E5CFE6E000F9BF1 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -202,6 +206,7 @@
 				B9C1B7FC1E5E4518001B0A2D /* SwiftWebVC.swift in Sources */,
 				B9C1B7FD1E5E4518001B0A2D /* SwiftWebVCActivity.swift in Sources */,
 				B9C1B7FE1E5E4518001B0A2D /* SwiftWebVCActivityChrome.swift in Sources */,
+				1D151EC6213EAC19007C87DD /* SwiftWebVCShareItem.swift in Sources */,
 				B9C1B7FF1E5E4518001B0A2D /* SwiftWebVCActivitySafari.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,20 +239,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -287,20 +301,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -344,7 +367,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftweb.SwiftWebVCFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -363,7 +387,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftweb.SwiftWebVCFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
